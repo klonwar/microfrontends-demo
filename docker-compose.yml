@@ -1,0 +1,44 @@
+version: '3'
+services:
+  mfda-main-app:
+    build: frontend/mfda-main-app
+    image: mfda-main-app
+    ports:
+      - "5000:80"
+    depends_on:
+      - mfda-wrapper-app
+      - mfda-react-app
+      - mfda-react-parcel
+      - mfda-vue-app
+      - mfda-vue-parcel
+  mfda-wrapper-app:
+    build: frontend/mfda-wrapper-app
+    image: mfda-wrapper-app
+    ports:
+      - "5001:85"
+
+  mfda-react-app:
+    build: frontend/mfda-react-app
+    image: mfda-react-app
+    ports:
+      - "5010:82"
+  mfda-react-parcel:
+    build: frontend/mfda-react-parcel
+    image: mfda-react-parcel
+    ports:
+      - "5011:84"
+    depends_on:
+      - mfda-react-app
+
+  mfda-vue-app:
+    build: frontend/mfda-vue-app
+    image: mfda-vue-app
+    ports:
+      - "5020:81"
+  mfda-vue-parcel:
+    build: frontend/mfda-vue-parcel
+    image: mfda-vue-parcel
+    ports:
+      - "5021:83"
+    depends_on:
+      - mfda-vue-app

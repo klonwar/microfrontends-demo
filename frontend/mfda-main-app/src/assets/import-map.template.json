@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "mfda-wrapper-app": "http://localhost:5001/main.js",
+    "mfda-vue-app": "http://localhost:5020/js/app.js",
+    "mfda-react-app": "http://localhost:5010/index.js",
+    "mfda-vue-parcel": "http://localhost:5021/js/app.js",
+    "mfda-react-parcel": "http://localhost:5011/index.js"
+  }
+}

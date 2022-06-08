@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 100%;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: #fff;
+}
+
+.mfda-loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.mfda-loading-screen .mfda-loading-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.mfda-loading-screen .mfda-loading-logo {
+    width: 54px;
+    height: 54px;
+}
+
+.mfda-loading-screen .mfda-loading-icon {
+    object-fit: none;
+}
+
+.mfda-loading-screen .error-message {
+    font: normal normal bold 14px/19px Roboto;
+    position: relative;
+    bottom: 5px;
+    max-width: 500px;
+    padding: 0 7px;
+
+    color: #333;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-flex {
+    display: flex;
+}
+
+pre

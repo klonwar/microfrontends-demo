@@ -1,0 +1,13 @@
+{
+  "name": "mfda-main-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "serve": "serve -p 5000"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^13.0.2"
+  }
+}

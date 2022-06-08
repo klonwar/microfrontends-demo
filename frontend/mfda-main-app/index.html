@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="importmap-type" content="systemjs-importmap">
+
+  <title>MFE Demo App</title>
+  <link rel="shortcut icon" href="src/assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="src/css/style.css">
+
+  <script type="systemjs-importmap" crossorigin>
+      {
+        "imports": {
+          "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.9.3/system/single-spa.min.js",
+          "single-spa-layout": "https://unpkg.com/single-spa-layout@2.0.1/dist/system/single-spa-layout.min.js",
+          "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js",
+          "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.1.3/dist/vue-router.min.js",
+          "react": "https://unpkg.com/react@18.1.0/umd/react.production.min.js",
+          "react-dom": "https://unpkg.com/react-dom@18.1.0/umd/react-dom.production.min.js",
+          "axios": "https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
+        }
+      }
+  </script>
+  <script type="systemjs-importmap" src="src/assets/import-map.json" crossorigin></script>
+
+  <!-- single-spa -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.9.3/system/single-spa.min.js"
+        as="script" crossorigin="anonymous" />
+  <link rel="preload" href="https://unpkg.com/single-spa-layout@2.0.1/dist/system/single-spa-layout.min.js"
+        as="script" crossorigin="anonymous" />
+
+  <!-- react -->
+  <link rel="preload" href="https://unpkg.com/react@18.1.0/umd/react.production.min.js" as="script"
+        crossorigin="anonymous" />
+  <link rel="preload" href="https://unpkg.com/react-dom@18.1.0/umd/react-dom.production.min.js" as="script"
+        crossorigin="anonymous" />
+
+
+  <!-- todo change to angular -->
+
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js" as="script" crossorigin="anonymous" />
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/vue-router@3.1.3/dist/vue-router.min.js" as="script"
+        crossorigin="anonymous" />
+
+  <!-- axios -->
+
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" as="script"
+        crossorigin="anonymous" />
+
+  <!-- import-map-overrides -->
+  <script src="https://unpkg.com/import-map-overrides@3.0.0/dist/import-map-overrides.js"></script>
+
+  <!-- system.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.12.1/system.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.12.1/extras/amd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.12.1/extras/named-exports.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.12.1/extras/named-register.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/6.12.1/extras/use-default.min.js"></script>
+
+  <!-- layout -->
+  <template id="single-spa-layout">
+    <single-spa-router>
+      <main id="mfe-container">
+        <div id="ssl-loading" class="mfda-loading-screen">
+          <div class="mfda-loading-container">
+            <img id="ssl-icon-loading" class="mfda-loading-logo loading-icon" src="src/assets/spinner.gif" alt=""/>
+            <img id="ssl-icon-error" class="mfda-loading-logo error-icon display-none" src="src/assets/warning.png" alt=""/>
+            <div id="ssl-error" class="error-message display-none"></div>
+          </div>
+        </div>
+        <route default>
+          <application name="mfda-wrapper-app" props="props"></application>
+        </route>
+      </main>
+    </single-spa-router>
+  </template>
+</head>
+
+<body>
+  <script src="src/main.js"></script>
+  <import-map-overrides-full show-when-local-storage="overrides-ui"></import-map-overrides-full>
+</body>
+
+</html>
